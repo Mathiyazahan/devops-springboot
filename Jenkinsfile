@@ -2,10 +2,10 @@ node{
 	def mvnHome
 	stage('Prepare'){
 		git url:'git@github.com:Mathiyazahan/devops-springboot.git',branch:'develop'
-		mvnHome= tool 'mvn'
+		mvnHome= tool 'maven'
 	}
 		stage('Build'){
-		bat "'${mvnHome}\bin\mvn' -Dmaven.test.failure.ignore clean package"
+		bat "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
 	}
 	stage('Unit Test'){
 	junit '**/target/surefire-reports/TEST-*.xml'
