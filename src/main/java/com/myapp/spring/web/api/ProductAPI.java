@@ -136,7 +136,7 @@ public class ProductAPI {
          response.put("deleted", Boolean.TRUE);
          return response;
     }
-	
+	//http://localhost:8888/api/v1/products/findByName
 	 @GetMapping("/findByName")
 	    public ResponseEntity<List<Product>> findProductsByName
 	    (@RequestParam("productName") Optional<String> productName){
@@ -147,5 +147,7 @@ public class ProductAPI {
 	    (repository.findByProductNameLike(productName.orElse("")).get(), HttpStatus.OK);
 	    }
 	
+	 
+
 
 }
